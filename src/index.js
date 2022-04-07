@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import SingleComment from "./SingleComment";
+import profile1 from "./images/image1.jpg";
+import profile2 from "./images/image2.jpg";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const First = () => {
+  //nesting & Reusable
+  return (
+    <>
+      {" "}
+      <div className="ui comments">
+        <SingleComment
+          name="Anu"
+          time="3pm"
+          profile={profile2}
+          message="Good Luck"
+        />
+        <SingleComment
+          name="Vikram"
+          time="4pm"
+          profile={profile1}
+          message="All the best"
+        />
+        <SingleComment
+          name="Nithya"
+          time="7pm"
+          profile={profile2}
+          message="congrats"
+        />
+      </div>
+    </>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<First />, document.querySelector("#root"));
